@@ -1,0 +1,7 @@
+每个字符串类型变量/常量对应了一个runtime.stringStruct实例，经过rawstring实例化后
+stringStruct中的str指针指向了真正存储字符串的底层内存区域，len字段存储的是字符串
+长度；rawstring同时还创建了一个临时slice，该slice的array指针也执行存储字符串数据的
+底层内存区域。
+
+ps：rawstring调用后，新申请的内存区域还未被写入数据，该slice就是供后续运行时层向其中
+写入数据用的。写完数据后，该slice被GC。

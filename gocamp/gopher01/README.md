@@ -23,7 +23,7 @@
 
 类型嵌入，可以将已经实现的功能嵌入新类型中，快速满足新类型的功能需求
 ```go
-// example 01
+// example 01.txt
 type poolLocal struct {
 	private interface{}
 	shared []interface{}
